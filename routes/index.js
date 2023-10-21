@@ -6,3 +6,5 @@ const app = express();
 app.use('/notes', notesRoutes);
 
 module.exports = app;
+
+// connects index page to notes page

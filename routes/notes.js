@@ -2,11 +2,12 @@ const app = require('express').Router();
 const { readFromFile, readAndAppend, writeToFile } = require('../helpers/fsUtils');
 const { v4: uuidv4 } = require('uuid');
 
-
+// get the data from db.json
 app.get('/', (req, res) => {
     readFromFile('./db/db.json').then((data) => res.json(JSON.parse(data)));
   });
 
+  // post the data from database to page
 app.post('/', (req, res) => {
   console.log(req.body);
 
@@ -26,6 +27,7 @@ app.post('/', (req, res) => {
   }
 });
 
+// remove notes from the list
 app.delete('/:id', (req, res) => {
   const noteId = req.params.id;
   readFromFile('./db/db.json')
@@ -34,10 +36,8 @@ app.delete('/:id', (req, res) => {
       
       const result = json.filter((note) => note.id !== noteId);
 
-      
       writeToFile('./db/db.json', result);
 
-      
       res.json(`Item ${noteId} has been deleted `);
     });
 });

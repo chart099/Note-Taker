@@ -11,6 +11,7 @@ app.use('/api', api);
 
 app.use(express.static('public'));
 
+// GET for notes page
 app.get('/notes', (req, res) => {
     res.sendFile(path.join(__dirname, '/public/notes.html'))
 });
@@ -20,6 +21,7 @@ app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, '/public/index.html'))
 });
 
+// port listener
 app.listen(PORT, () =>
   console.log(`App listening at http://localhost:${PORT}`)
 );
