@@ -5,7 +5,12 @@
     },
     {
         "title": "Note 1",
-        "text": "note text 1\n",
-        "id": "523dff0c-c32c-43e1-80e4-3ad555692ca4"
+        "text": "some text for that note",
+        "id": "ca7465b9-4efa-470f-bae9-f677e5d77cdc"
+    },
+    {
+        "title": "More notes for the list",
+        "text": "text for note\n",
+        "id": "87defd41-df71-44d8-aec2-642c57d99b7b"
     }
 ]
